@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cloud IDS Dashboard</title>
+</head>
+<body>
+    <h1>Cloud IDS - كشف الهجمات</h1>
+    <table border="1">
+        <tr>
+            <th>Requests</th>
+            <th>Anomaly</th>
+        </tr>
+        {% for row in results %}
+        <tr>
+            <td>{{ row.requests }}</td>
+            <td>{% if row.anomaly == -1 %}⚠️ هجوم{% else %}✔️ طبيعي{% endif %}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
